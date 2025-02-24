@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  grid-area: filters;
+  padding-right: 0.5rem;
+}
+
+.input {
+  height: 2rem;
+
+  border-radius: 0.5rem;
+  border-width: 0.125rem;
+  border-color: var(--bg-2);
+  border-style: solid;
+  background-color: #0f0b0d;
+  color: var(--white);
+
+  padding: 1rem 0.5rem;
+}
+.input::placeholder {
+  color: var(--white);
+  opacity: 0.25;
+}
+
+.search {
+  width: 16rem;
+}
+
+.username {
+  width: 12rem;
+}
+
+.pp-container {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pp {
+  width: 4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding-left: 0.5rem;
+
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .pp-container {
+    width: 100%;
+  }
+  .input {
+    width: 100%;
+  }
+
+  .loved {
+    display: none;
+  }
+}

@@ -1,0 +1,21 @@
+.scores {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  /* border-style: solid;
+    border-width: 2px; */
+  width: 100%;
+  max-width: 1280px;
+  padding: 8px;
+  overflow: hidden;
+  min-height: 1932px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(15, 11, 13, 1) 100%
+  );
+  border-radius: var(--outer-radius);
+
+  grid-area: scores;
+}

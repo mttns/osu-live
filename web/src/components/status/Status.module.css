@@ -1,0 +1,71 @@
+.scores-status {
+  grid-area: status;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 1rem;
+  color: var(--white);
+  padding-left: 0.5rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 1rem;
+}
+
+span.connected {
+  height: 1.4rem;
+}
+.connected {
+  color: #6beb5f;
+}
+.status-dot.connected {
+  background-color: #6beb5f;
+}
+
+.disconnected {
+  color: #eb5f5f;
+}
+.status-dot.disconnected {
+  background-color: #eb5f5f;
+}
+
+.connecting {
+  color: #ebe95f;
+}
+.status-dot.connecting {
+  background-color: #ebe95f;
+}
+
+.viewers-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.viewer-count {
+  font-weight: 700;
+  height: 1.4rem;
+}
+
+.viewers-icon {
+  height: 1.25rem;
+  width: auto;
+}
+
+@media only screen and (max-width: 800px) {
+  .scores-status {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}

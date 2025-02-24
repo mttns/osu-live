@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "outDir": "dist",
+    "strict": true,
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+    "resolveJsonModule": true,
+    "noErrorTruncation": true,
+    "noUnusedLocals": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "lib": ["ESNext"]
+  },
+  "tsc-alias": {
+    "resolveFullPaths": true
+  },
+  "include": ["src", "tests"]
+}
