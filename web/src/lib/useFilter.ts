@@ -16,6 +16,7 @@ export function useScoreFilters(
     mapsetId?: number;
     usernameFilter?: string;
     beatmapFilter?: string;
+    rulesets: Set<number>;
   }
 ) {
   return useMemo(() => {
@@ -27,6 +28,7 @@ export function useScoreFilters(
       mapsetId,
       usernameFilter,
       beatmapFilter,
+      rulesets,
     } = filters;
 
     const beatmapFilterRegex =
@@ -35,6 +37,10 @@ export function useScoreFilters(
         : undefined;
 
     return scores.filter((score) => {
+      if (!rulesets.has(score.rulesetId)) {
+        return false;
+      }
+
       if (minPp !== undefined && Math.round(score.pp || 0) < minPp) {
         return false;
       }

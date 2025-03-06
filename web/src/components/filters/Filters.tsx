@@ -94,6 +94,86 @@ export function Filters() {
         }
         defaultValue={filters.beatmapFilter}
       />
+      <button
+        type="button"
+        onClick={() =>
+          setFilters({
+            ...filters,
+            rulesets: filters.rulesets.has(0)
+              ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 0
+                  )
+                )
+              : new Set([...Array.from(filters.rulesets), 0]),
+          })
+        }
+        style={{
+          backgroundColor: filters.rulesets.has(0) ? "#00FF00" : "#FF0000",
+        }}
+      >
+        standard
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          setFilters({
+            ...filters,
+            rulesets: filters.rulesets.has(1)
+              ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 1
+                  )
+                )
+              : new Set([...Array.from(filters.rulesets), 1]),
+          })
+        }
+        style={{
+          backgroundColor: filters.rulesets.has(1) ? "#00FF00" : "#FF0000",
+        }}
+      >
+        taiko
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          setFilters({
+            ...filters,
+            rulesets: filters.rulesets.has(2)
+              ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 2
+                  )
+                )
+              : new Set([...Array.from(filters.rulesets), 2]),
+          })
+        }
+        style={{
+          backgroundColor: filters.rulesets.has(2) ? "#00FF00" : "#FF0000",
+        }}
+      >
+        fruits
+      </button>
+      <button
+        type="button"
+        onClick={() =>
+          setFilters({
+            ...filters,
+            rulesets: filters.rulesets.has(3)
+              ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 3
+                  )
+                )
+              : new Set([...Array.from(filters.rulesets), 3]),
+          })
+        }
+        style={{
+          backgroundColor: filters.rulesets.has(3) ? "#00FF00" : "#FF0000",
+        }}
+      >
+        mania
+      </button>
     </div>
   );
 }

@@ -24,7 +24,7 @@ export const WebAPIScore = z.object({
   rank: z.string(),
   //   ranked: boolean;
   //   replay: boolean;
-  //   ruleset_id: number;
+  ruleset_id: z.number(),
   //   started_at: unknown | null;
   //   statistics: unknown;
   //   total_score: number;

@@ -53,7 +53,7 @@ export class OsuAPI {
   }
 
   public async getScores() {
-    const params = new URLSearchParams({ ruleset: "osu" });
+    const params = new URLSearchParams();
     if (this.scoreCursor !== undefined) {
       params.set("cursor[id]", this.scoreCursor.toString());
     }
@@ -98,6 +98,7 @@ export class OsuAPI {
           pp: score.pp,
           user: { id: score.user_id, username },
           beatmap: beatmap === null ? null : JSON.parse(beatmap),
+          rulesetId: score.ruleset_id,
         };
       }
     );
