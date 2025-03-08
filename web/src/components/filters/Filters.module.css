@@ -57,7 +57,7 @@
 
 .ruleset-container button {
   border-radius: 0.5rem;
-  border: 0.125rem solid #009900;
+  border: 1px solid #009900;
   background-color: #00BB00;
   padding: 0.25rem 0.5rem 0.25rem 0.5rem;
   display: flex;
@@ -67,8 +67,8 @@
 }
 
 .ruleset-container button.disabled {
-  background-color: #FF0000;
-  border: 0.125rem solid #DD0000;
+  background-color: #EE0000;
+  border-color: #CC0000;
 }
 
 .ruleset-container button p {
@@ -103,4 +103,6 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  
 }
