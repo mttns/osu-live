@@ -49,6 +49,36 @@
   width: 4rem;
 }
 
+.ruleset-container {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.ruleset-container button {
+  border-radius: 0.5rem;
+  border: 1px solid #009900;
+  background-color: #00BB00;
+  padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  gap: 0.25rem;
+}
+
+.ruleset-container button.disabled {
+  background-color: #EE0000;
+  border-color: #CC0000;
+}
+
+.ruleset-container button p {
+  color: var(--white);
+}
+
+.ruleset-icon {
+  color: var(--white);
+}
+
 @media only screen and (max-width: 800px) {
   .container {
     padding-left: 0.5rem;
@@ -67,5 +97,19 @@
 
   .loved {
     display: none;
+  }
+
+  .ruleset-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .ruleset-container button {
+    font-size: 14px;
+  }
+
+  .ruleset-icon {
+    width: 24px;
+    height: 24px;
   }
 }

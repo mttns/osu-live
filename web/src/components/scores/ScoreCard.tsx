@@ -48,7 +48,14 @@ export const ScoreCard = memo(function ScoreCard({ score }: { score: Score }) {
               rel="noopener noreferrer"
               className={styles["user"]}
             >
-              {score.user.username ?? `Unindexed User (${score.user.id})`}
+              {score.user.username ?? `Unindexed User (${score.user.id})`} mode:{" "}
+              {score.rulesetId === 0
+                ? "std"
+                : score.rulesetId === 1
+                ? "taiko"
+                : score.rulesetId === 2
+                ? "fruits"
+                : "mania"}
             </a>
           </p>
           <p className={styles["score-subheading"]}>

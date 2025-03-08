@@ -3,6 +3,11 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./Filters.module.css";
 import { FilterContext } from "../context/FilterContext";
 import { FilterMap } from "osu-live";
+import { StandardIcon } from "@/components/icons/rulesets/StandardIcon";
+import { TaikoIcon } from "@/components/icons/rulesets/TaikoIcon";
+import { ManiaIcon } from "@/components/icons/rulesets/ManiaIcon";
+import { CatchIcon } from "@/components/icons/rulesets/CatchIcon";
+
 
 export function Filters() {
   const { filters: debouncedFilters, setFilters: setDebouncedFilters } =
@@ -94,6 +99,84 @@ export function Filters() {
         }
         defaultValue={filters.beatmapFilter}
       />
+      <div className={`${styles["ruleset-container"]}`}>
+        <button
+          type="button"
+          onClick={() =>
+            setFilters({
+              ...filters,
+              rulesets: filters.rulesets.has(0)
+                ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 0
+                  )
+                )
+                : new Set([...Array.from(filters.rulesets), 0]),
+            })
+          }
+          className={!filters.rulesets.has(0) ? styles["disabled"] : undefined}
+        >
+          <StandardIcon className={styles["ruleset-icon"]} />
+          <p>Standard</p>
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setFilters({
+              ...filters,
+              rulesets: filters.rulesets.has(1)
+                ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 1
+                  )
+                )
+                : new Set([...Array.from(filters.rulesets), 1]),
+            })
+          }
+          className={!filters.rulesets.has(1) ? styles["disabled"] : undefined}
+        >
+          <TaikoIcon className={styles["ruleset-icon"]} />
+          <p>Taiko</p>
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setFilters({
+              ...filters,
+              rulesets: filters.rulesets.has(2)
+                ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 2
+                  )
+                )
+                : new Set([...Array.from(filters.rulesets), 2]),
+            })
+          }
+          className={!filters.rulesets.has(2) ? styles["disabled"] : undefined}
+        >
+          <CatchIcon className={styles["ruleset-icon"]} />
+          <p>Fruits</p>
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setFilters({
+              ...filters,
+              rulesets: filters.rulesets.has(3)
+                ? new Set(
+                  Array.from(filters.rulesets).filter(
+                    (ruleset) => ruleset !== 3
+                  )
+                )
+                : new Set([...Array.from(filters.rulesets), 3]),
+            })
+          }
+          className={!filters.rulesets.has(3) ? styles["disabled"] : undefined}
+        >
+          <ManiaIcon className={styles["ruleset-icon"]} />
+          <p>Mania</p>
+        </button>
+      </div>
     </div>
   );
 }

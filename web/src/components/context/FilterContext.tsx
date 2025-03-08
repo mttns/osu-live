@@ -6,7 +6,7 @@ export const FilterContext = createContext<{
   filters: FilterMap;
   setFilters: (filters: FilterMap) => void;
 }>({
-  filters: {},
+  filters: { rulesets: new Set([0]) },
   setFilters: () => {},
 });
 
@@ -15,7 +15,7 @@ export const FilterContextProvider = function FilterContextProvider({
 }: {
   children: ReactNode;
 }) {
-  const [filters, setFilters] = useState<FilterMap>({});
+  const [filters, setFilters] = useState<FilterMap>({ rulesets: new Set([0]) });
 
   const filterMemo = useMemo(() => {
     return { filters, setFilters };

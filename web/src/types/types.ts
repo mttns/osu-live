@@ -38,6 +38,8 @@ declare module "osu-live" {
     };
     id: number;
     beatmap: TransformedBeatmap | null;
+    rulesetId: number;
+    // 0 = standard, 1 = taiko, 2 = fruits, 3 = mania
   } & { ingress: number };
 
   type FilterMap = {
@@ -49,5 +51,6 @@ declare module "osu-live" {
     mapsetId?: number;
     usernameFilter?: string;
     beatmapFilter?: string;
+    rulesets: Set<number>;
   };
 }
