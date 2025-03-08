@@ -104,5 +104,13 @@
     justify-content: center;
   }
 
-  
+  .ruleset-container button {
+    padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+    font-size: 14px;
+  }
+
+  .ruleset-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
